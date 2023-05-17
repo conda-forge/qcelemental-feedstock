@@ -39,7 +39,7 @@ test:
 about:
   home: https://github.com/MolSSI/QCElemental
   dev_url: https://github.com/MolSSI/QCElemental
-  doc_url: https://qcelemental.readthedocs.io/en/latest/
+  doc_url: https://molssi.github.io/QCElemental/
   doc_source_url: https://github.com/MolSSI/QCElemental/blob/master/docs/source/index.rst
   license: BSD-3-Clause
   license_url: https://opensource.org/licenses/BSD-3-Clause
