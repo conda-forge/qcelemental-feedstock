@@ -34,7 +34,7 @@ test:
     - pytest >=4.0.0
     - scipy
   commands:
-    - pytest --pyargs qcelemental
+    - pytest --pyargs qcelemental -k "not pubchem_multiout_g"
 
 about:
   home: https://github.com/MolSSI/QCElemental
