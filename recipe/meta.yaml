@@ -1,13 +1,14 @@
 {% set name = "qcelemental" %}
 {% set version = "0.25.1" %}
-{% set sha256 = "e3e0e53fe047d14756718441040a5d737135f0bdb33efb1d63a1935b95821a74" %}
+{% set sha256 = "2faf4e7c497e393591612de366c70252152064ccd3cc142e47282de838d01878" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  #url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://github.com/molssi/QCElemental/archive/4a1ce8b.tar.gz
   sha256: {{ sha256 }}
 
 build:
