@@ -21,10 +21,10 @@ requirements:
     - pip
     - poetry-core >=1.2.0
   run:
-    - numpy >=1.12.0
-    - pint >=0.10.0
+    - numpy
+    - pint
     - pydantic >=1.8.2
-    - python >=3.6.0
+    - python >=3.7
 
 test:
   imports:
@@ -32,7 +32,7 @@ test:
   requires:
     # - networkx >=2.4.0          # these might be imposing a pyqt dependence on qcel for the c-f migrators
     # - nglview                   # ditto
-    - pytest >=4.0.0
+    - pytest
     - scipy
   commands:
     - pytest --pyargs qcelemental -k "not pubchem_multiout_g"
