@@ -12,12 +12,12 @@ source:
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
   host:
-    - python >=3.6
+    - python >=3.7
     - pip
     - poetry-core >=1.2.0
   run:
@@ -30,8 +30,8 @@ test:
   imports:
     - qcelemental
   requires:
-    - networkx >=2.4.0
-    - nglview
+    # - networkx >=2.4.0          # these might be imposing a pyqt dependence on qcel for the c-f migrators
+    # - nglview                   # ditto
     - pytest >=4.0.0
     - scipy
   commands:
