@@ -7,24 +7,24 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: {{ sha256 }}
 
 build:
   noarch: python
-  number: 1
+  number: 2
   script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
   host:
-    - python >=3.7
+    - python {{ python_min }}
     - pip
     - poetry-core >=1.2.0
   run:
     - numpy
     - pint
     - pydantic >=1.8.2
-    - python >=3.7
+    - python >={{ python_min }}
 
 test:
   imports:
@@ -34,6 +34,7 @@ test:
     # - nglview                   # ditto
     - pytest
     - scipy
+    - python {{ python_min }}
   commands:
     - pytest --pyargs qcelemental -k "not pubchem_multiout_g"
 
