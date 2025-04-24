@@ -12,7 +12,7 @@ source:
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
@@ -31,8 +31,8 @@ test:
   imports:
     - qcelemental
   requires:
-    # - networkx >=2.4.0          # these might be imposing a pyqt dependence on qcel for the c-f migrators
-    # - nglview                   # ditto
+    - networkx >=2.4.0          # these might be imposing a pyqt dependence on qcel for the c-f migrators
+    - nglview                   # ditto
     - pytest
     - scipy
   commands:
