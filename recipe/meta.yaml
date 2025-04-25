@@ -31,8 +31,9 @@ test:
   imports:
     - qcelemental
   requires:
-    # - networkx >=2.4.0          # these might be imposing a pyqt dependence on qcel for the c-f migrators
-    # - nglview                   # ditto
+    - networkx >=2.4.0
+    - nglview
+      # networkx and nglview might be imposing a pyqt dependence on qcel for the c-f migrators
     - pytest
     - scipy
     - python {{ python_min }}
