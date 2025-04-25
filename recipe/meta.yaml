@@ -7,17 +7,17 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: {{ sha256 }}
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
   host:
-    - python >=3.7
+    - python {{ python_min }}
     - pip
     - poetry-core >=1.2.0
     - packaging
@@ -25,16 +25,18 @@ requirements:
     - numpy
     - pint
     - pydantic >=1.8.2
-    - python >=3.7
+    - python >={{ python_min }}
 
 test:
   imports:
     - qcelemental
   requires:
-    # - networkx >=2.4.0          # these might be imposing a pyqt dependence on qcel for the c-f migrators
-    # - nglview                   # ditto
+    - networkx >=2.4.0
+    - nglview
+      # networkx and nglview might be imposing a pyqt dependence on qcel for the c-f migrators
     - pytest
     - scipy
+    - python {{ python_min }}
   commands:
     - pytest --pyargs qcelemental -k "not pubchem_multiout_g"
 
