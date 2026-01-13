@@ -48,7 +48,6 @@ about:
   license: BSD-3-Clause
   license_url: https://opensource.org/licenses/BSD-3-Clause
   license_file: LICENSE
-  license_family: BSD
   summary: QCElemental is a resource module for quantum chemistry containing physical constants and periodic table data from NIST and molecule handlers.
 
 extra:
