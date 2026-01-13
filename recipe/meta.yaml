@@ -1,6 +1,6 @@
 {% set name = "qcelemental" %}
-{% set version = "0.30.0" %}
-{% set sha256 = "9c85b7f1178a804d45034af9e5338eb003a5bed015ddf2107b14eccaac78af88" %}
+{% set version = "0.50.0rc1" %}
+{% set sha256 = "36e219c0ae9016c294763b9f8d921970f4f20f0ff949d3c5946b1dd4d96c122c" %}
 
 package:
   name: {{ name|lower }}
@@ -19,13 +19,13 @@ requirements:
   host:
     - python {{ python_min }}
     - pip
-    - poetry-core >=1.2.0
-    - packaging
+    - setuptools >=61.0
+    - setuptools-scm >=8.0
   run:
     - numpy
     - pint
-    - pydantic >=1.8.2
-    - python >={{ python_min }},<3.14.0
+    - pydantic >=2.12,<3
+    - python >={{ python_min }}
 
 test:
   imports:
@@ -36,8 +36,12 @@ test:
       # networkx and nglview might be imposing a pyqt dependence on qcel for the c-f migrators
     - pytest
     - scipy
+    - pip
     - python {{ python_min }}
   commands:
+    - test -f $SP_DIR/qcelemental/__init__.py
+    - pip check
+    - python -c "import qcelemental as qc;assert qc.__version__ == '{{ version }}', f'{qc.__version__=} differs from recipe=\'{{ version }}\''"
     - pytest --pyargs qcelemental -k "not pubchem_multiout_g"
 
 about:
