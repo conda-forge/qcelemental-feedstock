@@ -36,6 +36,8 @@ test:
     - networkx >=2.4.0
     - nglview
       # networkx and nglview might be imposing a pyqt dependence on qcel for the c-f migrators
+    - setuptools <82.0
+      # nglview v4 avail for >=py311 but py310 nglview needs pkg_resources
     - pytest
     - scipy
     - python {{ python_min }}
