@@ -26,8 +26,8 @@ requirements:
     - pint
     - pydantic >=1.8.2
     - python >={{ python_min }},<3.14.0
-  run_constrained:
-    - nglview >=4.0
+  # run_constrained:
+    # - nglview >=4.0
 
 test:
   imports:
