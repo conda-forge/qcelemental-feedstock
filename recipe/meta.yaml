@@ -1,6 +1,6 @@
 {% set name = "qcelemental" %}
-{% set version = "0.30.0" %}
-{% set sha256 = "9c85b7f1178a804d45034af9e5338eb003a5bed015ddf2107b14eccaac78af88" %}
+{% set version = "0.30.1" %}
+{% set sha256 = "58c34a97885f5bf1883b01cd7a4652c20b9a33ae0b2dead06ab1213a0a9bdabb" %}
 
 package:
   name: {{ name|lower }}
@@ -26,6 +26,8 @@ requirements:
     - pint
     - pydantic >=1.8.2
     - python >={{ python_min }},<3.14.0
+  run_constrained:
+    - nglview >=4.0
 
 test:
   imports:
