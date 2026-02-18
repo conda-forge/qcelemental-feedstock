@@ -1,6 +1,6 @@
 {% set name = "qcelemental" %}
-{% set version = "0.50.0rc1" %}
-{% set sha256 = "36e219c0ae9016c294763b9f8d921970f4f20f0ff949d3c5946b1dd4d96c122c" %}
+{% set version = "0.50.0rc2" %}
+{% set sha256 = "39be97b2a6eaea8d27af8f7eaed75ffde2e22a9ad605da69caa07a1b48636abd" %}
 
 package:
   name: {{ name|lower }}
@@ -12,7 +12,7 @@ source:
 
 build:
   noarch: python
-  number: 1
+  number: 0
   script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
@@ -34,6 +34,8 @@ test:
     - networkx >=2.4.0
     - nglview
       # networkx and nglview might be imposing a pyqt dependence on qcel for the c-f migrators
+    - setuptools <82.0
+      # nglview v4 avail for >=py311 but py310 nglview needs pkg_resources
     - pytest
     - scipy
     - pip
