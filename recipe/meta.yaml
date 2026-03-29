@@ -1,6 +1,6 @@
 {% set name = "qcelemental" %}
-{% set version = "0.50.0rc3" %}
-{% set sha256 = "71a42677bce80f3c9de184fd73927fee8cf67846e15a98ab8191dc9ce4f0cfb9" %}
+{% set version = "0.50.0rc4" %}
+{% set sha256 = "3a282244922dca5a94f48ed57c5a2213e3a726d0c5e6f8708c80313426ff049a" %}
 
 package:
   name: {{ name|lower }}
@@ -19,8 +19,8 @@ requirements:
   host:
     - python {{ python_min }}
     - pip
-    - setuptools >=61.0
-    - setuptools-scm >=8.0
+    - setuptools
+    - setuptools-scm
   run:
     - numpy
     - pint
